@@ -1,0 +1,12 @@
+{
+  "name": "static-site-mailer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ColdFerrin/personal-site-contact-sender.git",
+  "author": "ColdFerrin <ferrinkatz@ferrinkatz.com>",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.624.0",
+    "serverless": "^1.64.0"
+  }
+}
