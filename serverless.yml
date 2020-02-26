@@ -12,6 +12,8 @@ functions:
 
 provider:
   name: aws
+  stage: ${opt:stage, 'dev'}
+  environment: ${file(./env.yml):${opt:stage, self:provider.stage}}
   runtime: nodejs12.x
   iamRoleStatements:
     - Effect: "Allow"

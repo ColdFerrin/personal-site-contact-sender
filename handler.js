@@ -31,11 +31,12 @@ module.exports.staticSiteMailer = (event, context, callback) => {
     const formData = JSON.parse(event.body);
 
     sendEmail(formData, function(err, data) {
+        let url = process.env.URL;
         const response = {
             statusCode: err ? 500 : 200,
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'https://ferrinkatz.com',
+                'Access-Control-Allow-Origin': url,
             },
             body: JSON.stringify({
                 message: err ? err.message : data,
