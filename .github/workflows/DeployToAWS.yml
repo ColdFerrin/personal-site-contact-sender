@@ -23,21 +23,25 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js 12.x
+      - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 14.x
 
-      - name: install yarn
-        run: npm install yarn -g
+      - name: serverless deploy dev
+          uses: serverless/github-action@master
+          with:
+            args: deploy --stage dev
+          env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - name: install dependancies
-        run: yarn install
-
-      - name: install to dev
-        run: yarn sls deploy --stage dev
-
-      - name: install to prod
-        run: yarn sls deploy --stage prod
+      - name: serverless deploy prod
+          uses: serverless/github-action@master
+          with:
+            args: deploy --stage prod
+          env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 
