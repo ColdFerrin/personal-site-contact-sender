@@ -29,6 +29,7 @@ function sendEmail(formData, callback) {
 
 module.exports.staticSiteMailer = (event, context, callback) => {
     const formData = JSON.parse(event.body);
+    console.log(event)
 
     sendEmail(formData, function(err, data) {
         let url = process.env.URL;
