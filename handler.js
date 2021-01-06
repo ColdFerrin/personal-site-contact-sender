@@ -14,7 +14,7 @@ function sendEmail(formData, callback) {
             Body: {
                 Text: {
                     Charset: 'UTF-8',
-                    Data: `${formData.message}\n\nName: ${formData.name}\nEmail: ${formData.reply_to}`,
+                    Data: `${formData.message}\n\nName: ${formData.name}\nEmail: ${formData.reply_to}\n\n\nSource: ${formData.source}`,
                 },
             },
             Subject: {
@@ -28,7 +28,8 @@ function sendEmail(formData, callback) {
 }
 
 module.exports.staticSiteMailer = (event, context, callback) => {
-    const formData = JSON.parse(event.body);
+    let formData = JSON.parse(event.body);
+    formData.source = event.requestContext.path;
     console.log(event)
 
     sendEmail(formData, function(err, data) {

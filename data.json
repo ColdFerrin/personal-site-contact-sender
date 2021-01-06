@@ -1,3 +1,6 @@
 {
+  "requestContext": {
+    "path": "/prod/static-site-mailer"
+  },
   "body": "{\"name\": \"test\",\"reply_to\": \"test@test.com\",\"message\": \"test\"}"
 }
