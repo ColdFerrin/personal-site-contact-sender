@@ -26,7 +26,7 @@ function sendEmail(formData, callback) {
     ses.sendEmail(emailParams, callback);
 }
 
-module.exports.staticSiteMailer = (event, context, callback) => {
+function staticSiteMailer(event, context, callback) {
     let formData = JSON.parse(event.body);
     formData.source = event.requestContext.path;
     console.log(event)
@@ -46,4 +46,6 @@ module.exports.staticSiteMailer = (event, context, callback) => {
 
         callback(null, response);
     });
-};
+}
+
+export { staticSiteMailer }
