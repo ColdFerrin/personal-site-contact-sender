@@ -3,18 +3,18 @@ AWS Serverless and and SES contact form sender
 
 ## Deployment
 
-### install yarn
-
-`npm install yarn -g`
-
 ### install dependancies
 
-`yarn install`
+`npm install`
 
-#### Dev deploy
+### Send Test Message
 
-`yarn sls deploy --verbose --stage dev`
+`serverless invoke local --function staticSiteMailer -p local-data.json`
 
-#### Prod deploy
+### Dev deploy
 
-`yarn sls deplay --verbose --stage prod`
+`serverless deploy --verbose --stage dev`
+
+### Prod deploy
+
+`serverless deplay --verbose --stage prod`

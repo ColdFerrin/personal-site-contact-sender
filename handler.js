@@ -1,7 +1,6 @@
-'use strict';
+import { SES } from "@aws-sdk/client-ses";
 
-const AWS = require('aws-sdk');
-const SES = new AWS.SES();
+const ses = new SES();
 
 function sendEmail(formData, callback) {
     const emailParams = {
@@ -24,7 +23,7 @@ function sendEmail(formData, callback) {
         },
     };
 
-    SES.sendEmail(emailParams, callback);
+    ses.sendEmail(emailParams, callback);
 }
 
 module.exports.staticSiteMailer = (event, context, callback) => {
