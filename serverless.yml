@@ -19,8 +19,8 @@ provider:
   tracing:
     lambda: true
   iam:
-    Role:
-      Statements:
+    role:
+      statements:
         - Effect: "Allow"
           Action:
             - "ses:SendEmail"
