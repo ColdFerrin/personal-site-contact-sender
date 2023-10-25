@@ -15,11 +15,13 @@ provider:
   name: aws
   stage: ${opt:stage, 'dev'}
   environment: ${file(./env.yml):${opt:stage, self:provider.stage}}
-  runtime: nodejs12.x
+  runtime: nodejs18.x
   tracing:
     lambda: true
-  iamRoleStatements:
-    - Effect: "Allow"
-      Action:
-        - "ses:SendEmail"
-      Resource: ["*"]
+  iam:
+    Role:
+      Statements:
+        - Effect: "Allow"
+          Action:
+            - "ses:SendEmail"
+          Resource: ["*"]

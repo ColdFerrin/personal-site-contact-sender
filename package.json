@@ -8,6 +8,6 @@
   "dependencies": {
     "aws-sdk": "^2.624.0",
     "axios": "^0.21.1",
-    "serverless": "^1.64.0"
+    "serverless": "^3.36.0"
   }
 }
