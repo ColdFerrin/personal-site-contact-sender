@@ -5,6 +5,7 @@
   "repository": "https://github.com/ColdFerrin/personal-site-contact-sender.git",
   "author": "ColdFerrin <ferrinkatz@ferrinkatz.com>",
   "license": "MIT",
+  "type": "module",
   "dependencies": {
     "@aws-sdk/client-ses": "^3.435.0",
     "axios": "^0.21.1",
