@@ -1,4 +1,6 @@
 
+frameworkVersion: ~4.21.1
+
 service: static-site-mailer
 
 functions:
